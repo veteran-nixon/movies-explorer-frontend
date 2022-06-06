@@ -1,6 +1,6 @@
 function NavTab(props) {
   return (
-    <a className="nav-tab__link">{props.text}</a>
+    <a className={props.className}>{props.text}</a>
   )
 }
 

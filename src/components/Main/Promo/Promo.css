@@ -18,7 +18,7 @@
   color: rgba(255, 255, 255, 1);
 }
 
-.promo__nav-container {
+.promo__nav-table {
   width: 1280px;
   display: flex;
   flex-direction: row;

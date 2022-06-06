@@ -1,9 +1,9 @@
-.nav-tab__link {
+.nav-tab {
   height: 36px;
   width: 96px;
   border-radius: 10px;
   background-color: #303030;
-  font-family: Inter;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
@@ -15,6 +15,11 @@
   margin: 0 10px 0 0;
 }
 
-.nav-tab__link:last-child {
+.nav-tab:last-child {
   margin-right: 0;
+}
+
+.nav-tab_techs {
+  width: 90px;
+  height: 60px;
 }
