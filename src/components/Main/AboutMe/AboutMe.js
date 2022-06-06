@@ -2,7 +2,7 @@ import avatar from '../../../images/avatar.jpg'
 
 function AboutMe() {
   return (
-    <section className="about-me">
+    <section id="about-me" className="about-me">
       <h2 className="about-me__heading">Студент</h2>
       <div className="about-me__container">
         <div className="about-me__column">
@@ -17,10 +17,10 @@ function AboutMe() {
           </p>
           <ul className="about-me__links">
               <li className="about-me__link">
-                <a target="_blank" rel="noreferrer">Facebook</a>
+                <a className="about-me__link-text" target="_blank" rel="noreferrer" href="https://vk.com">ВКонтатке</a>
               </li>
               <li className="about-me__link">
-                <a target="_blank" rel="noreferrer">Github</a>
+                <a className="about-me__link-text" target="_blank" rel="noreferrer" href="https://github.com/veteran-nixon">Github</a>
               </li>
             </ul>
         </div>
