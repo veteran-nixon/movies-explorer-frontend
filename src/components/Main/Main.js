@@ -8,7 +8,7 @@ import Footer from "../Footer/Footer"
 
 function Main() {
   return (
-    <main>
+    <main className="main">
       <Header />
       <Promo />
       <AboutProject />

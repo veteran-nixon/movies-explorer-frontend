@@ -10,18 +10,18 @@ function Login() {
           <h2 className="login__heading">Рады видеть!</h2>
           <form className="login__form" name="login__form">
             <label className="login__field">E-mail
-              <input className="login-form__input login-form__input_error" id="email-input" type="email" name="email" autoComplete="off" />
-              <span className="login-form__input-error">Что-то пошло не так...</span>
+              <input className="login__input login__input_error" id="email-input" type="email" name="email" autoComplete="off" placeholder="введите E-mail" required />
+              <span className="login__input-error">Что-то пошло не так...</span>
             </label>
             <label className="login__field">Пароль
-              <input className="login-form__input login-form__input_error" id="password-input" type="password" name="password" autoComplete="off" />
-              <span className="login-form__input-error">Что-то пошло не так...</span>
+              <input className="login__input login__input_error" id="password-input" type="password" name="password" autoComplete="off" placeholder="введите пароль" required />
+              <span className="login__input-error">Что-то пошло не так...</span>
             </label>
-            <button type="submit" className="login-form__submit-button" aria-label="submit" id="login-form__submit-button">Войти</button>
+            <button type="submit" className="login__submit-button" aria-label="submit" id="login__submit-button">Войти</button>
           </form>
           <div className="login__bottom-container">
             <p className="login__bottom-text">Еще не зарегистрированы?</p>
-            <Link to="/signup" className="login__bottom-link">Зарегистрироваться</Link>
+            <Link to="/signup" className="login__bottom-link">Регистрация</Link>
           </div>
         </main>
     )

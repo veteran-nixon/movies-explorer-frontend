@@ -3,9 +3,9 @@ import Footer from "../Footer/Footer";
 import SearchForm from "../SearchForm/SeacrForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 
-function Movies() {
+function SavedMovies() {
   return (
-    <main className="movies">
+    <main className="saved-movies">
       <Header />
       <SearchForm />
       <MoviesCardList />
@@ -14,4 +14,4 @@ function Movies() {
   )
 }
 
-export default Movies;
+export default SavedMovies;

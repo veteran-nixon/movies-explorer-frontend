@@ -1,7 +1,6 @@
 .login {
   width: 396px;
-  height: 100%;
-  margin: 70px auto 0;
+  margin: 70px auto;
   display: flex;
   flex-direction: column;
 }
@@ -38,7 +37,7 @@
   margin: 0 auto 24px;
   display: flex;
   flex-direction: column;
-  font-family: 'Inter';
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -50,7 +49,7 @@
   margin: 0 auto;
 }
 
-.login-form__input {
+.login__input {
   width: 100%;
   margin: 5px auto 0;
   background-color: inherit;
@@ -67,17 +66,17 @@
   border-bottom: 1px solid #424242;
 }
 
-.login-form__input:focus {
+.login__input:focus {
   font-weight: 500;
   border-bottom: 1px solid #4285F4;
 }
 
 /* если поле невалидное */
-/* .login-form__input_error {
+/* .login__input_error {
   color: #EE3465;
 } */
 
-.login-form__input-error {
+.login__input-error {
   /* visibility: hidden; */
   margin: 6px auto 0;
   width: 100%;
@@ -89,7 +88,7 @@
   color: #EE3465;
 }
 
-.login-form__submit-button {
+.login__submit-button {
   width: 100%;
   height: 45px;
   margin: 221px auto 0;
@@ -114,7 +113,7 @@
   -o-transition: linear .4s;
 }
 
-.login-form__submit-button:hover {
+.login__submit-button:hover {
   cursor: pointer;
   opacity: .8;
 }
@@ -122,12 +121,11 @@
 .login__bottom-container {
   display: flex;
   flex-direction: row;
-  margin: 16px auto 70px;
+  margin: 16px auto 0px;
   align-items: center;
 }
 
 .login__bottom-text {
-  margin: 0 6px 0 0;
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -135,9 +133,15 @@
   line-height: 17px;
   text-align: center;
   color: #8B8B8B;
+  margin: 0 6px 0 0;
 }
 
 .login__bottom-link {
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
   margin: 0;
   text-decoration: none;
   color: #4285F4;
@@ -150,4 +154,44 @@
 
 .login__bottom-link:hover {
   opacity: .7;
+}
+
+@media screen and (max-width: 1140px) {
+  .login {
+    margin: 232px auto;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .login {
+    width: 260px;
+    margin: 50px auto 30px;
+  }
+
+  .login__logo-link {
+    margin: 0 auto;
+  }
+
+  .login__heading {
+    margin: 50px auto 0;
+    text-align: center;
+  }
+
+  .login__submit-button {
+    margin: 309px auto 0;
+  }
+
+  .login__bottom-container {
+    margin: 14px auto 0px;
+  }
+
+  .login__bottom-text {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
+
+  .login__bottom-link {
+    font-size: 12px;
+    line-height: 14.52px;
+  }
 }

@@ -1,14 +1,14 @@
 .about-me {
-  width: 1140px;
+  width: calc(89%);
+  max-width: 1280px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
   display: flex;
   flex-direction: column;
 }
 
 .about-me__heading {
-  margin: 110px auto 23px 0;
+  width: calc(100%);
+  margin: 110px auto 23px;
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-size: 22px;
   font-weight: 400;
@@ -18,7 +18,7 @@
 }
 
 .about-me__container {
-  width: 1140px;
+  width: calc(100%);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -27,11 +27,13 @@
 }
 
 .about-me__column {
-  margin: 66px 270px 0 0;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  margin: 66px 0 0;
 }
 
 .about-me__name {
-  width: 600px;
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -63,7 +65,7 @@
 }
 
 .about-me__links {
-  margin: 99px 0 0 0;
+  margin: auto 0 0;
   list-style-type: none;
   padding: 0;
   display: flex;
@@ -98,6 +100,8 @@
 }
 
 .about-me__avatar {
+  object-fit: cover;
+  align-self: flex-end;
   width: 270px;
   height: 348px;
   margin: 0;
@@ -111,4 +115,116 @@
 .about-me__link-text {
   text-decoration: none;
   color: inherit;
+}
+
+@media screen and (max-width: 1140px) {
+  .about-me {
+    width: calc(86.97%);
+    max-width: 768px;
+  }
+
+  .about-me__heading {
+    margin: 90px auto 23px;
+    letter-spacing: -0.04em;
+  }
+
+  .about-me__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-top: 1px solid #DADADA;
+    margin: 0 auto;
+  }
+
+  .about-me__column {
+    width: 348px;
+    margin: 66px 0 0;
+  }
+
+  .about-me__name {
+    line-height: 40px;
+    letter-spacing: -0.04em;
+  }
+
+  .about-me__bio {
+    margin: 16px 0 0;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__info {
+    margin: 20px 0 0 0;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .about-me__links {
+    margin: auto 0 0;
+  }
+
+  .about-me__avatar {
+    width: 255px;
+    height: 307px;
+  }
+
+  .about-me__link-text {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .about-me {
+    width: 320px;
+  }
+
+  .about-me__heading {
+    margin: 79px auto 28px;
+    width: 292px;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  .about-me__container {
+    width: 292px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-top: 1px solid #DADADA;
+    margin: 0 auto;
+  }
+
+  .about-me__column {
+    display: flex;
+    flex-direction: column;
+    width: 292px;
+    margin: 0 auto;
+  }
+
+  .about-me__name {
+    font-size: 30px;
+    line-height: 36px;
+    margin: 40px 0 0;
+  }
+
+  .about-me__bio {
+    margin: 20px 0 0;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about-me__info {
+    margin: 20px 0 0;
+    font-size: 11px;
+    line-height: 16px;
+  }
+
+  .about-me__links {
+    margin: 40px 0 0;
+  }
+
+  .about-me__avatar {
+    width: 292px;
+    height: 352px;
+    margin: 60px 0 0;
+  }
 }

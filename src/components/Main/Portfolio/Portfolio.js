@@ -7,15 +7,15 @@ function Portfolio() {
       <ul className="portfolio__links">
               <li className="portfolio__link">
                 <a className="portfolio__link-text" target="_blank" rel="noreferrer" href="https://github.com/veteran-nixon/how-to-learn">Статичный сайт</a>
-                <img src={arrow} alt="стрелка" />
+                <img className="portfolio__link-icon" src={arrow} alt="стрелка" />
               </li>
               <li className="portfolio__link">
                 <a className="portfolio__link-text" target="_blank" rel="noreferrer" href="https://github.com/veteran-nixon/russian-travel">Адаптивный сайт</a>
-                <img src={arrow} alt="стрелка" />
+                <img className="portfolio__link-icon" src={arrow} alt="стрелка" />
               </li>
               <li className="portfolio__link">
                 <a className="portfolio__link-text" target="_blank" rel="noreferrer" href="https://github.com/veteran-nixon/react-mesto-api-full">Одностраничное приложение</a>
-                <img src={arrow} alt="стрелка" />
+                <img className="portfolio__link-icon" src={arrow} alt="стрелка" />
               </li>
             </ul>
     </section>

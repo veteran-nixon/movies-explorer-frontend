@@ -1,5 +1,6 @@
 .promo {
-  width: 1280px;
+  width: calc(100%);
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -12,7 +13,7 @@
 }
 
 .promo__heading {
-  width: 730px;
+  max-width: 730px;
   margin: 160px auto 151px;
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   font-size: 50px;
@@ -23,9 +24,43 @@
 }
 
 .promo__nav-table {
-  width: 1280px;
+  width: calc(100%);
+  max-width: 1200px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 0 auto 30px;
+}
+
+@media screen and (max-width: 1140px) {
+  .promo {
+    max-width: 728px;
+  }
+
+  .promo__heading {
+    max-width: 680px;
+    margin: 350px auto 314px;
+    font-size: 40px;
+    line-height: 52px;
+  }
+}
+
+@media screen and (max-width: 665px) {
+  .promo {
+    max-width: 292px;
+  }
+
+  .promo__heading {
+    /* width: calc(93.4%); */
+    width: 292px;
+    margin: 220px auto 212px;
+    font-size: 29px;
+    line-height: 37px;
+    letter-spacing: -0.04em;
+  }
+
+  .promo__nav-table {
+    max-width: 258px;
+    margin: 0 auto 17px;
+  }
 }
