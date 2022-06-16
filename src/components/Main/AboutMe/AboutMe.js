@@ -17,7 +17,7 @@ function AboutMe() {
           </p>
           <ul className="about-me__links">
               <li className="about-me__link">
-                <a className="about-me__link-text" target="_blank" rel="noreferrer" href="https://vk.com">ВКонтатке</a>
+                <a className="about-me__link-text" target="_blank" rel="noreferrer" href="https://vk.com">ВКонтакте</a>
               </li>
               <li className="about-me__link">
                 <a className="about-me__link-text" target="_blank" rel="noreferrer" href="https://github.com/veteran-nixon">Github</a>

@@ -13,7 +13,7 @@ function Navigation() {
               <button type="button" className="nav__close-button" id="nav__close-button" aria-label="close-button" />
               <ul className="nav__list nav__list_mobile">
                 <li className="nav__list-cell nav__list-cell_mobile">
-                  <NavLink to="/" className={({isActive}) => `${isActive ? "nav__link nav__link_hidden nav__link_mobile nav__link_active" : "nav__link nav__link_mobile"}`}>Главная</NavLink>
+                  <NavLink to="/" className={({isActive}) => `${isActive ? "nav__link nav__link_hidden nav__link_mobile nav__link_active" : "nav__link nav__link_hidden nav__link_mobile"}`}>Главная</NavLink>
                 </li>
                 <li className="nav__list-cell nav__list-cell_mobile">
                   <NavLink to="/movies" className={({isActive}) => `${isActive ? "nav__link nav__link_mobile nav__link_active" : "nav__link nav__link_mobile"}`}>Фильмы</NavLink>
