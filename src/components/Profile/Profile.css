@@ -136,7 +136,7 @@
   color: #EE3465;
 } */
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1160px) {
   .profile__heading {
     margin: 236px auto 96px;
   }
@@ -146,7 +146,7 @@
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) {
   .profile__heading {
     margin: 70px auto 80px;
   }

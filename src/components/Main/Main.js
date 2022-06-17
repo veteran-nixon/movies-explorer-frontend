@@ -5,8 +5,11 @@ import AboutMe from "./AboutMe/AboutMe.js";
 import Portfolio from "./Portfolio/Portfolio.js";
 import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
+import Title from "../../utils/Title.js";
 
 function Main() {
+  Title('Movies Explorer')
+
   return (
     <main className="main">
       <Header />

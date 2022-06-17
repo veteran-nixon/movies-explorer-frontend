@@ -1,6 +1,9 @@
+import Title from "../../utils/Title";
 import Header from "../Header/Header";
 
 function Profile() {
+  Title('Аккаунт - Movies Explorer')
+
   return (
     <main className="profile">
       <Header />

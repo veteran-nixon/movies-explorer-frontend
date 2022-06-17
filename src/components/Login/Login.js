@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import logo from "../../images/header_logo.svg"
+import Title from "../../utils/Title";
 
 function Login() {
+    Title('Войти - Movies Explorer')
+
     return (
         <main className="login">
           <Link to="/" className="login__logo-link">

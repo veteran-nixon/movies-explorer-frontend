@@ -36,13 +36,13 @@
   color: #FFFFFF;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1160px) {
   .filter-checkbox {
     margin: 26px 15px 26px 19px;
   }
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 750px) {
   .filter {
     width: 300px;
     margin: auto 0;

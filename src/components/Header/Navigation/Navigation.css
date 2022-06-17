@@ -122,7 +122,7 @@
     top: 0;
     right: 0;
     z-index: 3;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     background-color: #202020;
     overflow: visible;
@@ -209,7 +209,7 @@
   }
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 750px) {
   .nav__container_mobile {
     width: 100%;
     min-height: 780px;

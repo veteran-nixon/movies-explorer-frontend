@@ -156,13 +156,13 @@
   opacity: .7;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1160px) {
   .login {
     margin: 232px auto;
   }
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 750px) {
   .login {
     width: 260px;
     margin: 50px auto 30px;

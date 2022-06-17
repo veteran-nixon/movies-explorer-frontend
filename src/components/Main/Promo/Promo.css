@@ -32,7 +32,7 @@
   margin: 0 auto 30px;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1160px) {
   .promo {
     max-width: 728px;
   }
@@ -45,7 +45,7 @@
   }
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 750px) {
   .promo {
     max-width: 292px;
   }

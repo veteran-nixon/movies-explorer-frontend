@@ -74,13 +74,13 @@
   color: inherit;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1160px) {
   .footer {
     max-width: 708px;
   }
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 750px) {
   .footer {
     width: 300px;
     padding-bottom: 10px;

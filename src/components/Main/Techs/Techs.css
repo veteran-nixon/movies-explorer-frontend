@@ -59,7 +59,7 @@
   margin: 100px auto 0;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1160px) {
   .techs {
     max-width: 768px;
   }
@@ -100,7 +100,7 @@
   }
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 750px) {
   .techs {
     width: 320px;
     background-color: inherit;

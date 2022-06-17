@@ -45,6 +45,7 @@
 
 .search-form__input:focus {
   font-weight: 500;
+  border-bottom: 1px solid #4285F4;
 }
 
 .search-form__submit-button {

@@ -50,7 +50,7 @@
   opacity: .7;
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 1160px) {
   .not-found-page {
     margin: 408px auto 184px;
   }
@@ -60,7 +60,7 @@
   }
 }
 
-@media screen and (max-width: 665px) {
+@media screen and (max-width: 750px) {
   .not-found-page {
     margin: 329px auto 30px;
   }
