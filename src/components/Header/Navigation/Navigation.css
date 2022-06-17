@@ -1,0 +1,261 @@
+.nav__container {
+  width: calc(100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+  align-items: center;
+}
+
+.nav__container_main {
+  margin: 0;
+  justify-content: flex-end;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: linear .4s;
+  -webkit-transition: linear .4s;
+  -moz-transition: linear .4s;
+  -ms-transition: linear .4s;
+  -o-transition: linear .4s;
+}
+
+.nav__link_hidden {
+  display: none;
+}
+
+.nav__list-cell {
+  display: flex;
+}
+
+.nav__list-cell_main:nth-child(1){
+  margin: 0 16px 0 0;
+}
+
+.nav__list-cell:nth-child(2){
+  margin-right: 16px;
+}
+
+.nav__list-cell_main:nth-child(2){
+  margin: 0;
+}
+
+.nav__link:hover {
+  opacity: .7;
+}
+
+.nav__link_active {
+  font-weight: 500;
+}
+
+.nav__link_theme_grey {
+  font-weight: 500;
+  margin: 0;
+  width: 100px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  background-color: #313131;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+
+.nav__link_theme_green {
+  margin: 0;
+  width: 76px;
+  height: 32px;
+  display: flex;
+  color: #000;
+  font-weight: 500;
+  justify-content: center;
+  background-color: #3DDC84;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.nav__burger-menu_hidden {
+  display: none;
+}
+
+.nav__close-button {
+  display: none;
+}
+
+@media screen and (max-width: 1160px) {
+  .nav__container_hidden {
+    display: none;
+  }
+
+  .nav__link_hidden {
+    display: block;
+  }
+
+  .nav__container_mobile {
+    display: none;
+    width: 520px;
+    min-height: 1024px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    /* display: flex; */
+    flex-direction: column;
+    background-color: #202020;
+    overflow: visible;
+    justify-content: flex-start;
+  }
+
+  .nav__container_mobile::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    width: 100vw;
+    height: 100%;
+    background-color: #000;
+    opacity: .3;
+    z-index: -1;
+  }
+
+  .nav__close-button {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background: url('../../../images/nav-close_icon.svg') center no-repeat ;
+    border: none;
+    position: absolute;
+    top: 29.16px;
+    right: 29.16px;
+  }
+
+  .nav__link_mobile {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21.78px;
+    text-align: center;
+  }
+
+  .nav__link_active {
+    text-decoration: underline 2px;
+  }
+
+  .nav__list_mobile {
+    margin: 159px auto 621px;
+    flex-direction: column;
+  }
+
+  .nav__list:last-child {
+    margin: 0;
+  }
+
+  .nav__list-cell_mobile {
+    display: flex;
+    justify-content: center;
+  }
+
+  .nav__list-cell:nth-child(2){
+    margin: 28px 0;
+  }
+
+  .nav__list-cell_main:nth-child(2){
+    margin: 0;
+  }
+
+  .nav__burger-menu {
+    width: 40px;
+    height: 43px;
+    display: block;
+    background: url('../../../images/burger-menu_icon.svg');
+    border: none;
+    transition: linear .4s;
+    -webkit-transition: linear .4s;
+    -moz-transition: linear .4s;
+    -ms-transition: linear .4s;
+    -o-transition: linear .4s;
+}
+
+  .nav__burger-menu:hover {
+    cursor: pointer;
+    opacity: .7;
+  }
+
+  .nav__link_theme_grey {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .nav__container_mobile {
+    width: 100%;
+    min-height: 780px;
+  }
+
+  .nav__container_mobile::before {
+    display: none;
+  }
+
+  .nav__list_mobile {
+    margin: 144px auto 444px;
+  }
+
+  .nav__close-button {
+    top: 20.16px;
+    right: 20.16px;
+  }
+
+  .nav__link {
+    font-size: 10px;
+  }
+
+  .nav__list-cell:nth-child(2){
+    margin: 28px 0;
+  }
+
+  .nav__list-cell_main {
+    margin: 0;
+  }
+
+  .nav__list-cell_main:nth-child(1){
+    margin-right: 14px;
+  }
+
+  .nav__list-cell_main:nth-child(2){
+    margin: 0;
+  }
+
+  .nav__link_theme_green {
+    width: 54px;
+    height: 26px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+}
+
+
+

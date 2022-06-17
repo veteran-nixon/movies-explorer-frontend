@@ -1,0 +1,110 @@
+.movies-card {
+  width: 100%;
+  background-color: #222222;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.movies-card__header {
+  display: flex;
+  flex-direction: row;
+}
+
+.movies-card__caption {
+  margin: 14px 0 14px 14px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+}
+
+.movies-card__heding {
+  margin: 0 0 9px 0;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  color: #FFFFFF;
+}
+
+.movies-card__duration {
+  margin: 0;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #8B8B8B;
+}
+
+.movies-card__button {
+  width: 30px;
+  height: 30px;
+  margin: 19px 14px 19px 26px;
+  border: none;
+  transition: linear .4s;
+  -webkit-transition: linear .4s;
+  -moz-transition: linear .4s;
+  -ms-transition: linear .4s;
+  -o-transition: linear .4s;
+}
+
+.movies-card__button_add {
+  background: url('../../images/add-button_icon.svg') no-repeat center;
+}
+
+.movies-card__button:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+.movies-card__button_saved {
+  background: url('../../images/saved-button_icon.svg') no-repeat center;
+}
+
+.movies-card__button_delete {
+  background: url('../../images/delete-button_icon.svg') no-repeat center;
+}
+
+.movies-card__image {
+  margin: 0;
+  transition: linear .4s;
+  -webkit-transition: linear .4s;
+  -moz-transition: linear .4s;
+  -ms-transition: linear .4s;
+  -o-transition: linear .4s;
+}
+
+.movies-card__image:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+@media screen and (max-width: 1160px) {
+  .movies-card__caption {
+    width: 250px;
+  }
+
+  .movies-card__button {
+    margin: 19px 14px 19px 31px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .movies-card__caption {
+    width: 210px;
+  }
+
+  .movies-card__heding {
+    line-height: 18.15px;
+  }
+
+  .movies-card__duration {
+    line-height: 13.31px;
+  }
+
+  .movies-card__button {
+    margin: 19px 14px 19px 32px;
+  }
+}

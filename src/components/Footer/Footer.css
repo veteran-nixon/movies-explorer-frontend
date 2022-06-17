@@ -1,0 +1,141 @@
+.footer {
+  width: calc(100%);
+  max-width: 1140px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__intro {
+  color: #8B8B8B;
+  margin: 79px auto 20px;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15.73px;
+}
+
+.footer__text-container {
+  border-top: 1px rgba(66, 66, 66, 1) solid;
+  width: calc(100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer__year {
+  margin: 20px 0 0 0;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15.73px;
+  color: #FFFFFF;
+}
+
+.footer__links {
+  list-style-type: none;
+  margin: 20px 0 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer__link {
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15.73px;
+  color: #FFFFFF;
+  margin: 0 20px 0 0;
+  transition: linear 0.4;
+  -webkit-transition: linear .4s;
+  -moz-transition: linear 0.4;
+  -ms-transition: linear 0.4;
+  -o-transition: linear 0.4;
+}
+
+.footer__link:last-child {
+  margin-right: 0;
+}
+
+.footer__link:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+.footer__link-text {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (max-width: 1160px) {
+  .footer {
+    max-width: 708px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .footer {
+    width: 300px;
+    padding-bottom: 10px;
+  }
+
+  .footer__intro {
+    margin: 79px auto 21px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .footer__text-container {
+    flex-direction: column-reverse;
+    margin: 0 auto;
+  }
+
+  .footer__year {
+    width: 292px;
+    margin: 30px auto 0;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+  }
+
+  .footer__links {
+    width: 292px;
+    margin: 30px auto 0;
+    flex-direction: column;
+  }
+
+  .footer__link {
+    margin: 0 auto;
+  }
+
+  .footer__link:nth-child(2) {
+    margin: 12px auto;
+  }
+
+  .footer__link:last-child {
+    margin: 0 auto;
+  }
+
+  .footer__link:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+
+  .footer__link-text {
+    font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 15.73px;
+    color: #FFFFFF;
+    text-decoration: none;
+    color: inherit;
+  }
+}

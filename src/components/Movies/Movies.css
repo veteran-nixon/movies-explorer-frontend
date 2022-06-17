@@ -1,0 +1,54 @@
+.movies {
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.movies__more-button {
+  width: 320px;
+  height: 32px;
+  margin: 80px auto 80px;
+  padding: 0;
+  background-color: inherit;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  border: 1px solid #424242;
+  font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  color: #FFFFFF;
+  transition: linear .4s;
+  -webkit-transition: linear .4s;
+  -moz-transition: linear .4s;
+  -ms-transition: linear .4s;
+  -o-transition: linear .4s;
+}
+
+.movies__more-button:hover {
+  cursor: pointer;
+  opacity: .8;
+}
+
+/* скрыть кнопку, когда нечего отображать и для SavedMovies */
+.movies__more_hidden {
+  display: none;
+}
+
+@media screen and (max-width: 1160px) {
+  .movies {
+    max-width: 708px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .movies {
+    max-width: 320px;
+  }
+}
