@@ -4,12 +4,12 @@ import SearchForm from "../SearchForm/SeacrForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList";
 import Title from "../../utils/Title";
 
-function Movies() {
+function Movies(props) {
   Title('Список фильмов - Movies Explorer')
 
   return (
     <main className="movies">
-      <Header />
+      <Header loggedIn={props.loggedIn} />
       <SearchForm />
       <MoviesCardList />
       <button type="button" className="movies__more-button" aria-label="more-button" id="movies__more-button">Еще</button>

@@ -1,12 +1,10 @@
 import { NavLink } from "react-router-dom"
 
-function Navigation() {
-  // в дальнейшем стейт логина
-  const isLogin = true;
+function Navigation(props) {
 
   return (
     <>
-      {isLogin
+      {props.loggedIn
         ? <>
             <button type="button" className="nav__burger-menu nav__burger-menu_hidden" id="nav__burger-menu" aria-label="burger-menu" />
             <nav className="nav__container nav__container_hidden nav__container_mobile ">

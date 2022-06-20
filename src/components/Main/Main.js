@@ -7,12 +7,12 @@ import Header from "../Header/Header"
 import Footer from "../Footer/Footer"
 import Title from "../../utils/Title.js";
 
-function Main() {
+function Main(props) {
   Title('Movies Explorer')
 
   return (
     <main className="main">
-      <Header />
+      <Header loggedIn={props.loggedIn} />
       <Promo />
       <AboutProject />
       <Techs />

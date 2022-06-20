@@ -1,12 +1,12 @@
 import Title from "../../utils/Title";
 import Header from "../Header/Header";
 
-function Profile() {
+function Profile(props) {
   Title('Аккаунт - Movies Explorer')
 
   return (
     <main className="profile">
-      <Header />
+      <Header loggedIn={props.loggedIn} />
       <h1 className="profile__heading">Привет, Евгений!</h1>
       <form className="profile__form" name="profile__form">
         <span className="profile__input-error">Что-то пошло не так...</span>

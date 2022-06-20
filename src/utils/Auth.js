@@ -1,0 +1,27 @@
+export const BASE_URL = 'http://localhost:3000';
+
+const checkResponse = (response) => response.ok ? response.json() : Promise.reject(`Ошибка: ${response.status}`)
+
+export function register(name, email, password) {
+    return fetch(`${BASE_URL}/signup`, {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({name, email, password})
+    })
+    .then(checkResponse)
+}
+
+export function authorize(email, password) {
+  return fetch(`${BASE_URL}/signin`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({email, password})
+  })
+  .then(checkResponse)
+}
