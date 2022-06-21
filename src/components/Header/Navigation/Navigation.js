@@ -1,14 +1,24 @@
 import { NavLink } from "react-router-dom"
+import { useState } from "react";
 
 function Navigation(props) {
+  const [navMobileOpened, setNavMobileOpened] = useState(false);
+
+  function openNavMenu() {
+    setNavMobileOpened(true)
+  }
+
+  function closeNavMenu() {
+    setNavMobileOpened(false)
+  }
 
   return (
     <>
       {props.loggedIn
         ? <>
-            <button type="button" className="nav__burger-menu nav__burger-menu_hidden" id="nav__burger-menu" aria-label="burger-menu" />
-            <nav className="nav__container nav__container_hidden nav__container_mobile ">
-              <button type="button" className="nav__close-button" id="nav__close-button" aria-label="close-button" />
+            <button onClick={openNavMenu} type="button" className="nav__burger-menu nav__burger-menu_hidden" id="nav__burger-menu" aria-label="burger-menu" />
+            <nav className={`nav__container nav__container_hidden nav__container_mobile ${navMobileOpened && 'nav__container_mobile_opened'}`}>
+              <button onClick={closeNavMenu} type="button" className="nav__close-button" id="nav__close-button" aria-label="close-button" />
               <ul className="nav__list nav__list_mobile">
                 <li className="nav__list-cell nav__list-cell_mobile">
                   <NavLink to="/" className={({isActive}) => `${isActive ? "nav__link nav__link_hidden nav__link_mobile nav__link_active" : "nav__link nav__link_hidden nav__link_mobile"}`}>Главная</NavLink>

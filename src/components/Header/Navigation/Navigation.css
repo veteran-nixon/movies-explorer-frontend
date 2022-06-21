@@ -129,6 +129,10 @@
     justify-content: flex-start;
   }
 
+  .nav__container_mobile_opened {
+    display: flex;
+  }
+
   .nav__container_mobile::before {
     content: " ";
     position: absolute;
@@ -150,6 +154,16 @@
     position: absolute;
     top: 29.16px;
     right: 29.16px;
+    transition: linear .4s;
+    -webkit-transition: linear .4s;
+    -moz-transition: linear .4s;
+    -ms-transition: linear .4s;
+    -o-transition: linear .4s;
+}
+
+  .nav__close-button:hover {
+    cursor: pointer;
+    opacity: .7;
   }
 
   .nav__link_mobile {
@@ -254,7 +268,6 @@
     font-size: 10px;
     line-height: 16px;
   }
-
 }
 
 

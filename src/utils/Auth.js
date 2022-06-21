@@ -25,3 +25,15 @@ export function authorize(email, password) {
   })
   .then(checkResponse)
 }
+
+export function getContent(token) {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    }
+  })
+  .then(checkResponse)
+}
