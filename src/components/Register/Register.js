@@ -1,30 +1,16 @@
 import { Link } from "react-router-dom";
 import logo from "../../images/header_logo.svg"
 import Title from "../../utils/Title";
-import { useState } from "react";
+import useValidation from "../../hoock/useValidation";
 
-function Register({ handleRegister }) {
+function Register(props) {
     Title('Зарегистрироваться - Movies Explorer')
 
-    const [data, setData] = useState({
-      name: 'test01',
-      email: 'test01@ya.ru',
-      password: '1234'
-    })
-
-    const { name, email, password } = data;
-
-    function handleChange(e) {
-      const {name, value} = e.target;
-      setData({
-          ...data,
-          [name]: value
-      });
-  }
+    const { values, handleChange, errors, isValid } = useValidation();
 
     function handleSubmit(e) {
-        e.preventDefault();
-        handleRegister(name, email, password);
+      e.preventDefault();
+      props.handleRegister(values.name, values.email, values.password);
     }
 
     return (
@@ -35,18 +21,21 @@ function Register({ handleRegister }) {
           <h2 className="register__heading">Добро пожаловать!</h2>
           <form onSubmit={handleSubmit} className="register__form" name="register__form">
             <label className="register__field"> Имя
-              <input value={name} onChange={handleChange} className="register__input register__input_error" id="name-input" type="text" name="name" autoComplete="off" placeholder="введите имя" required />
-              <span className="register__input-error">Что-то пошло не так...</span>
+              <input value={values.name || ''} minLength='2' onChange={handleChange} className={`register__input ${errors.name && 'register__input_error'}`} id="name-input" type="text" name="name" autoComplete="off" placeholder="введите имя" required />
+              <span className="register__input-error">{errors.name}</span>
             </label>
             <label className="register__field"> E-mail
-              <input value={email} onChange={handleChange} className="register__input register__input_error" id="email-input" type="email" name="email" autoComplete="off" placeholder="введите E-mail" required />
-              <span className="register__input-error">Что-то пошло не так...</span>
+              <input value={values.email || ''} onChange={handleChange} className={`register__input ${errors.name && 'register__input_error'}`} id="email-input" type="email" name="email" autoComplete="off" placeholder="введите E-mail" required />
+              <span className="register__input-error">{errors.email}</span>
             </label>
             <label className="register__field"> Пароль
-              <input value={password} onChange={handleChange} className="register__input register__input_error" id="password-input" type="password" name="password" autoComplete="off" placeholder="введите пароль" required/>
-              <span className="register__input-error">Что-то пошло не так...</span>
+              <input value={values.password || ''} onChange={handleChange} className={`register__input ${errors.name && 'register__input_error'}`} id="password-input" type="password" name="password" autoComplete="off" placeholder="введите пароль" required/>
+              <span className="register__input-error">{errors.password}</span>
             </label>
-            <button type="submit" className="register__submit-button" aria-label="submit" id="register__submit-button">Зарегистрироваться</button>
+            <div className="register__submit-container">
+              <span className="register__input-error">{(props.badRequestError && props.badRequestError) || (props.сonflictError && props.сonflictError)}</span>
+              <button type="submit" disabled={!isValid} className={`register__submit-button ${!isValid && 'register__submit-button_disabled'}`} aria-label="submit" id="register__submit-button">Зарегистрироваться</button>
+            </div>
           </form>
           <div className="register__bottom-container">
             <p className="register__bottom-text">Уже зарегистрированы?</p>

@@ -76,18 +76,7 @@
   .search-form {
     width: 708px;
     margin: 80px auto 110px;
-}
-
-  /* изменить цвет и границы формы поиска фильмов при открытом блоке навигации */
-  /* .search-form_theme_nav-opened {
-    background-color: #202020;
-    border: 1px solid #2F2F2F;
-    border-radius: 40px;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    -ms-border-radius: 40px;
-    -o-border-radius: 40px;
-  } */
+  }
 
   .search-form__input-container {
     width: 500px;
@@ -122,7 +111,7 @@
     -moz-border-radius: none;
     -ms-border-radius: none;
     -o-border-radius: none;
-}
+  }
 
   .search-form__input-container {
     width: 300px;
@@ -142,7 +131,7 @@
     font-size: 14px;
     line-height: 20px;
     margin: 25px 0 25px 19px;
-}
+  }
 
   .search-form__image {
     display: none;

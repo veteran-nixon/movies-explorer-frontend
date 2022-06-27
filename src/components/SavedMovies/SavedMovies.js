@@ -9,10 +9,21 @@ function SavedMovies(props) {
 
   return (
     <main className="saved-movies">
-      <Header loggedIn={props.loggedIn}/>
+      <Header loggedIn={props.loggedIn} />
       <section className="saved-movies__container">
-        <SearchForm />
-        <MoviesCardList />
+        <SearchForm
+          savedMovie={true}
+          handleSearchSavedMovie={props.handleSearchSavedMovie}
+          handleCLickShortMovie={props.handleCLickShortMovie}
+          isShortMovie={props.isShortMovie}
+          currentInputValue={props.currentInputValue}
+        />
+        <MoviesCardList
+          savedMovie={true}
+          movieList={props.movie}
+          notFoundError={props.notFoundError}
+          handleDeleteMovie={props.handleDeleteMovie}
+        />
       </section>
       <Footer />
     </main>

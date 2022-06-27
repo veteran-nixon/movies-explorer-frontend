@@ -37,7 +37,7 @@
 }
 
 /* скрыть кнопку, когда нечего отображать и для SavedMovies */
-.movies__more_hidden {
+.movies__more-button_hidden {
   display: none;
 }
 

@@ -5,13 +5,13 @@ import Navigation from './Navigation/Navigation';
 
 function Header(props) {
   return (
-      <header className="header">
-        <Link to="/">
-          <img className="header__logo" src={logoHeader} alt="логотип" />
-        </Link>
-        <Navigation loggedIn={props.loggedIn} />
-      </header>
-)
+    <header className="header">
+      <Link to="/">
+        <img className="header__logo" src={logoHeader} alt="логотип" />
+      </Link>
+      <Navigation loggedIn={props.loggedIn} />
+    </header>
+  )
 }
 
 export default Header;

@@ -159,7 +159,7 @@
     -moz-transition: linear .4s;
     -ms-transition: linear .4s;
     -o-transition: linear .4s;
-}
+  }
 
   .nav__close-button:hover {
     cursor: pointer;

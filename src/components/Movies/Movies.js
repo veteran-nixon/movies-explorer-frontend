@@ -10,9 +10,20 @@ function Movies(props) {
   return (
     <main className="movies">
       <Header loggedIn={props.loggedIn} />
-      <SearchForm />
-      <MoviesCardList />
-      <button type="button" className="movies__more-button" aria-label="more-button" id="movies__more-button">Еще</button>
+      <SearchForm
+        handleSearchMovie={props.handleSearchMovie}
+        handleCLickShortMovie={props.handleCLickShortMovie}
+        isShortMovie={props.isShortMovie}
+        currentInputValue={props.currentInputValue}
+      />
+      <MoviesCardList
+        handleSaveMovie={props.handleSaveMovie}
+        handleDeleteMovie={props.handleDeleteMovie}
+        movieList={props.movie}
+        searchError={props.searchError}
+        isLoading={props.isLoading}
+        notFoundError={props.notFoundError}
+      />
       <Footer />
     </main>
   )
