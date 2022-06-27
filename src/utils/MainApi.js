@@ -76,7 +76,7 @@ class MainApi {
 }
 
 const api = new MainApi({
-  url: 'http://localhost:3000',
+  url: 'https://api.movies.dolganev.nomoredomains.sbs',
 });
 
 export default api;
