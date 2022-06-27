@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'https://api.movies.dolganev.nomoredomains.sbs';
 
 const checkResponse = (res) => res.ok ? res.json() : Promise.reject(res.status)
 
