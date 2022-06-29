@@ -1,0 +1,28 @@
+.header {
+  width: calc(100%);
+  max-width: 1140px;
+  padding-top: 18px;
+  margin: 0 auto 18px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  margin: 0 40px 0 0;
+  width: 38px;
+  height: 38px;
+}
+
+@media screen and (max-width: 1160px) {
+  .header {
+    max-width: 708px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    width: 292px;
+  }
+}
