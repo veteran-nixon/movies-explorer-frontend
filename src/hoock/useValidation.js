@@ -13,7 +13,7 @@ function useValidation() {
     setIsValid(e.target.closest("form").checkValidity());
   };
 
-  return { values, setValues, handleChange, errors, isValid };
+  return { values, setValues, handleChange, errors, isValid, setIsValid};
 }
 
 export default useValidation;

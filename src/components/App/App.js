@@ -1,6 +1,6 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
-import { Route, Routes, useNavigate, useLocation} from 'react-router-dom'
+import React, { useState, useEffect, useCallback } from 'react';
+import { Route, Routes, useNavigate, useLocation, Navigate} from 'react-router-dom'
 import Main from '../Main/Main';
 import Movies from '../Movies/Movies';
 import SavedMovies from '../SavedMovies/SavedMovies';
@@ -23,6 +23,7 @@ function App() {
   const [ savedMovie, setSavedMovie ] = useState([]); // стейт сохраненных фильмов
   const [ defaultMoviesList, setDefaultMoviesList] = useState([]); // стейт списка фильмов при первой загрузке
   const [ isShortMovie, setIsShortMovie ] = useState(false);
+  const [ isShortSavedMovie, setIsShortSavedMovie ] = useState(false);
   const [ isLoading, setIsLoading ] = useState(false);
   const [ searchError, setSearchError ] = useState(false);
   const [ notFoundError, setNotFoundError ] = useState(false)
@@ -76,20 +77,6 @@ function App() {
     setDefaultMoviesList([])
   }
 
-  function tokenCheck() {
-    const token = localStorage.getItem('token');
-    if (token){
-      Auth.getContent(token)
-      .then((res) => {
-        if (res) {
-          setLoggedIn(true)
-          history('/movies');
-        }
-      })
-      .catch((err) => console.log(err))
-    }
-  }
-
   function handleUpdateUser(currentUser) {
     api.editProfile(currentUser)
       .then((data) => {
@@ -108,16 +95,31 @@ function App() {
       })
   }
 
+  const tokenCheck = useCallback(() => {
+    const token = localStorage.getItem('token');
+    if (token){
+      Auth.getContent(token)
+      .then((res) => {
+        if (res) {
+          setLoggedIn(true)
+          history(location.pathname, {replace: true});
+        }
+      })
+      .catch((err) => console.log(err))
+    }
+  }, [])
+
   useEffect(() => {
-    if(loggedIn) {
-      api.getUser()
+    tokenCheck()
+  }, [tokenCheck])
+
+  useEffect(() => {
+    api.getUser()
       .then((user) => {
         setCurrentUser(user)
       })
       .catch((err) => console.log(err))
-    }
-    tokenCheck();
-  }, [loggedIn]);
+  }, []);
 
   // функция поиска фильмов
   function handleSearchMovie(inputValue) {
@@ -136,7 +138,7 @@ function App() {
         let filtredMovie =[];
         // фильтр по ключевому слову, записывает значение в filtredMovie
         res.forEach((movie) => {
-          if(movie.nameRU.toLowerCase().includes(inputValue)) {
+          if(movie.nameRU.toLowerCase().includes(inputValue.toLowerCase())) {
             if(isShortMovie) {
               movie.duration <= 40 && filtredMovie.push(movie);
             } else {
@@ -163,7 +165,7 @@ function App() {
     } else {
       let filtredMovie =[];
       defaultMoviesList.forEach((movie) => {
-        if(movie.nameRU.toLowerCase().includes(inputValue)) {
+        if(movie.nameRU.toLowerCase().includes(inputValue.toLowerCase())) {
           if(isShortMovie) {
             movie.duration <= 40 && filtredMovie.push(movie);
           } else {
@@ -193,8 +195,8 @@ function App() {
     setNotFoundError(false)
     let filtredSavedMovie =[];
     JSON.parse(localStorage.getItem('savedMovies')).forEach((movie) => {
-      if(movie.nameRU.toLowerCase().includes(inputValue)) {
-        if(isShortMovie) {
+      if(movie.nameRU.toLowerCase().includes(inputValue.toLowerCase())) {
+        if(isShortSavedMovie) {
           movie.duration <= 40 && filtredSavedMovie.push(movie);
         } else {
           filtredSavedMovie.push(movie);
@@ -218,6 +220,11 @@ function App() {
       setIsShortMovie(localStorage.removeItem('isShortMovie'))
     }
   }
+
+  function handleCLickShortSavedMovie() {
+    setIsShortSavedMovie(!isShortSavedMovie)
+  }
+
   function saveMovie(movie) {
     api.saveMovie(movie).then((res) => {
       const movies = [...savedMovie, res];
@@ -243,6 +250,7 @@ function App() {
     setSearchError(false);
     setCurrentInputValue(localStorage.getItem('inputValue'));
     setIsShortMovie(localStorage.getItem('isShortMovie'));
+    setIsShortSavedMovie(false);
     if(loggedIn) {
       const movies = localStorage.getItem('movies');
       const savedMovies = localStorage.getItem('savedMovies')
@@ -272,7 +280,7 @@ function App() {
             exact path='/'
             element={<Main loggedIn={loggedIn} />}
           />
-          <Route path='/movies/*'
+          <Route path='/movies'
             element={
               <ProtectedRoute
                 handleDeleteMovie={deleteSavedMovie}
@@ -294,10 +302,10 @@ function App() {
               <ProtectedRoute
                 notFoundError={notFoundError}
                 handleDeleteMovie={deleteSavedMovie}
-                movie={savedMovie}
                 handleSearchSavedMovie={handleSearchSavedMovie}
-                isShortMovie={isShortMovie}
-                handleCLickShortMovie={handleCLickShortMovie}
+                movie={savedMovie}
+                handleCLickShortMovie={handleCLickShortSavedMovie}
+                isShortMovie={isShortSavedMovie}
                 loggedIn={loggedIn}
                 element={SavedMovies}
               />}
@@ -313,11 +321,11 @@ function App() {
           />
           <Route
             path='/signup'
-            element={<Register handleRegister={handleRegister} сonflictError={сonflictError} badRequestError={badRequestError} />}
+            element={loggedIn ? <Navigate to='/' /> : <Register handleRegister={handleRegister} сonflictError={сonflictError} badRequestError={badRequestError} />}
           />
           <Route
             path='/signin'
-            element={<Login handleLogin={handleLogin} loginError={loginError}/>}
+            element={loggedIn ? <Navigate to='/' /> :  <Login handleLogin={handleLogin} loginError={loginError}/>}
           />
           <Route path='*' element={<NotFoundPage />} />
         </Routes>

@@ -15,8 +15,8 @@ function SavedMovies(props) {
           savedMovie={true}
           handleSearchSavedMovie={props.handleSearchSavedMovie}
           handleCLickShortMovie={props.handleCLickShortMovie}
-          isShortMovie={props.isShortMovie}
           currentInputValue={props.currentInputValue}
+          isShortMovie={props.isShortMovie}
         />
         <MoviesCardList
           savedMovie={true}

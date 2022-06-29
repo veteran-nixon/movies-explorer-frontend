@@ -7,7 +7,7 @@ import useValidation  from "../../hoock/useValidation";
 function Profile(props) {
   Title('Аккаунт - Movies Explorer');
 
-  const { values, setValues, handleChange, errors, isValid } = useValidation();
+  const { values, setValues, handleChange, errors, isValid, setIsValid } = useValidation();
   const currentUser = useContext(CurrentUserContext);
 
   useEffect(() => {
@@ -18,7 +18,10 @@ function Profile(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.onUpdateUser({...values});
+    if(currentUser.name !== values.name || currentUser.email !== values.email) {
+      props.onUpdateUser({...values});
+    }
+    setIsValid(false)
   };
 
   return (
